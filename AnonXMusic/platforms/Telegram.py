@@ -14,6 +14,7 @@ from AnonXMusic.utils.formatters import (
     seconds_to_min,
 )
 
+loop = asyncio.get_event_loop_policy().get_event_loop()
 
 class TeleAPI:
     def __init__(self):
@@ -54,7 +55,7 @@ class TeleAPI:
             dur = seconds_to_min(filex.duration)
         except:
             try:
-                dur = await asyncio.get_event_loop().run_in_executor(
+                dur = await loop.run_in_executor(
                     None, check_duration, file_path
                 )
                 dur = seconds_to_min(dur)

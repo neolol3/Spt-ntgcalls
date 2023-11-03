@@ -45,7 +45,7 @@ from strings import get_string
 
 autoend = {}
 counter = {}
-
+loop = asyncio.get_event_loop_policy().get_event_loop()
 
 async def _clear_(chat_id):
     db[chat_id] = []
@@ -189,7 +189,7 @@ class Call(PyTgCalls):
                 pass
         else:
             out = file_path
-        dur = await asyncio.get_event_loop().run_in_executor(None, check_duration, out)
+        dur = await loop.run_in_executor(None, check_duration, out)
         dur = int(dur)
         played, con_seconds = speed_converter(playing[0]["played"], speed)
         duration = seconds_to_min(dur)
