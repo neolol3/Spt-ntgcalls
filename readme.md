@@ -43,7 +43,7 @@
 - Install pip by :
 `pip3 install -U pip`
 - Clone the repository by :
-`git clone https://github.com/AnonymousX1025/AnonXMusic && cd AnonXMusic`
+`git clone https://github.com/Pranav-Saraswat/Testing-Alpha1 && cd Testing-Alpha1`
 - Install requirements by :
 `pip3 install -U -r requirements.txt`
 - Fill your variables in the env by :
